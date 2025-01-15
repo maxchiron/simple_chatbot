@@ -1,18 +1,16 @@
-# Simple Chatbot / 简单聊天机器人
+# 🤖 Simple Chatbot / 简单聊天机器人 🤓
 
 ## Description / 描述
 
 This project is a simple chatbot implemented using Python and Streamlit. It can be deployed locally or using Docker for easy scalability.
 
-这个项目是一个使用Python和Streamlit实现的简单聊天机器人。它可以在本地部署，也可以使用Docker部署以便于扩展。
+这个项目是一个使用Python和Streamlit实现的简单聊天机器人。它可以在本地部署，也可以使用Docker部署。
 
 ## Features / 功能
 
-- Simple and intuitive user interface / 简单直观的用户界面
-- Real-time chat interaction / 实时聊天交互
-- Basic natural language processing capabilities / 基本的自然语言处理能力
-- Customizable responses based on user input / 根据用户输入自定义响应
-- Easy integration with other Python libraries for extended functionality / 易于与其他Python库集成以扩展功能
+- sqlite本地保存聊天记录
+- session侧栏
+- streamlit框架
 
 ## Local Deployment / 本地部署
 
@@ -20,7 +18,7 @@ This project is a simple chatbot implemented using Python and Streamlit. It can 
 
 1. Clone the repository / 克隆仓库
    ```
-   git clone <repository-url>
+   git clone https://github.com/maxchiron/simple_chatbot
    cd simple_chatbot
    ```
 
@@ -44,21 +42,21 @@ This project is a simple chatbot implemented using Python and Streamlit. It can 
 
 1. Clone the repository / 克隆仓库
    ```
-   git clone <repository-url>
+   git clone https://github.com/maxchiron/simple_chatbot
    cd simple_chatbot
-   ```
-
-2. Build Docker image / 构建Docker镜像
-   ```
-   docker build -t simple_chatbot .
    ```
 
 ### Usage / 使用方法
 
 1. Run the Docker container / 运行Docker容器
    ```
-   docker run -p 8501:8501 simple_chatbot
-   ```
+   docker run -d \
+      -e LLM_ENDPOINT=<LLM_ENDPOINT> \
+      -v /path/to/host/repo:/repo \
+      -p 8501:8501 \
+      --name simple_chatbot \
+      maxchiron/simple_chatbot:0.1
+    ```
 
 2. Open your web browser and navigate to `http://localhost:8501` / 打开网页浏览器并访问 `http://localhost:8501`
 
