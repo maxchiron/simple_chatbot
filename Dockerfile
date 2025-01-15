@@ -27,4 +27,4 @@ RUN pip3 install -r requirements.txt
 EXPOSE $APP_PORT
 
 # 设置 Streamlit 运行命令
-CMD ["streamlit", "run", "app.py", "--server.port", "8501"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port", "8501"]
