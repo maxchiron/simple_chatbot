@@ -55,7 +55,7 @@ This project is a simple chatbot implemented using Python and Streamlit. It can 
       -v /path/to/host/repo:/repo \
       -p 8501:8501 \
       --name simple_chatbot \
-      maxchiron/simple_chatbot:0.1
+      maxchiron/simple_chatbot:0.11
     ```
 
 2. Open your web browser and navigate to `http://localhost:8501` / 打开网页浏览器并访问 `http://localhost:8501`
