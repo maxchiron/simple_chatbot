@@ -1,5 +1,5 @@
 # 使用官方的 Linux 初始镜像
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # 安装必要的工具和依赖
 RUN apt-get update && apt-get install -y \
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 
 # 设置环境变量
 ENV LLM_ENDPOINT=127.0.0.1:8080
-ENV APP_PORT=8561
+ENV APP_PORT=8501
 
 # 克隆 Git 仓库
 RUN git clone https://github.com/maxchiron/simple_chatbot
@@ -27,4 +27,4 @@ RUN pip3 install -r requirements.txt
 EXPOSE $APP_PORT
 
 # 设置 Streamlit 运行命令
-CMD ["streamlit", "run", "app.py", "--server.port", "$APP_PORT"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port", "8501"]
