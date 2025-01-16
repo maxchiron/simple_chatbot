@@ -7,6 +7,7 @@ import sqlite3
 
 # Set up OpenAI client
 ip = os.environ.get('LLAMACPP_IP')
+model_name = os.environ.get('MODEL_NAME')
 client = OpenAI(base_url=f"http://{ip}/v1", api_key="fake")
 
 # SQLite database file
@@ -185,7 +186,7 @@ if st.session_state.current_session is not None:
             message_placeholder = st.empty()
             full_response = ""
             for chunk in client.chat.completions.create(
-                model="mistral-large-123b",
+                model=model_name,
                 messages=[
                     {"role": m["role"], "content": m["content"]}
                     for m in current_session['messages']
