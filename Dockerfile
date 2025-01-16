@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置环境变量
-ENV LLM_ENDPOINT=127.0.0.1:8080
+ENV LLM_ENDPOINT=host.docker.internal:11413
 ENV APP_PORT=8501
 
 # 克隆 Git 仓库

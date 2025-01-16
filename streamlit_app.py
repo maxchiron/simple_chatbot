@@ -6,9 +6,9 @@ import os
 import sqlite3
 
 # Set up OpenAI client
-ip = os.environ.get('LLAMACPP_IP')
-model_name = os.environ.get('MODEL_NAME')
-client = OpenAI(base_url=f"http://{ip}/v1", api_key="fake")
+llm_endpoint = os.environ.get('LLM_ENDPOINT', 'localhost:11413')
+model_name = os.environ.get('MODEL_NAME', 'default_model')
+client = OpenAI(base_url=f"http://{llm_endpoint}/v1", api_key="fake")
 
 # SQLite database file
 DB_FILE = 'chat_sessions.db'
